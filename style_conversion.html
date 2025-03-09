@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Correctority: Your Guardian for Correctness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="logo">
+             <a href="C:/Users/Sowmya Shetty/Desktop/My Project/ui/home.html">
+                <img src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/correctority_logo.png" alt="Correctority Logo" class="logo-img" style="cursor: pointer;">
+            </a>
+        </div>
+        <div class="inter-bold" onclick="showFeature('home')" style="cursor: pointer;">
+            Correctority.
+        </div>
+    <nav>
+        <ul class="nav-items">
+            <li>
+                <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size:28px;color: #1e7b76;"></i>
+                </a>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="profile-icon" id="profile-icon">
+                    <i class="fa-solid fa-circle-user" style="font-size:28px;color:#1e7b76;"></i>
+                </a>
+                <ul class="dropdown-content" id="profile-dropdown-content">
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#signup">Sign Up</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="menu-icon" id="menu-icon">
+                    <i class="fa-solid fa-bars" style="font-size:28px;color: #1e7b76;"></i>
+                </a>
+                <ul class="dropdown-content" id="menu-dropdown-content">
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    </div>
+    <div class="light-banner">
+        <button onclick="location.href='grammar_correction.html'" class="cormorant-garamond-bold">Grammar Correction</button>
+        <button onclick="location.href='detailed_error_explanations.html'" class="cormorant-garamond-bold">Detailed Error Explanations</button>
+        <button onclick="location.href='style_conversion.html'" class="cormorant-garamond-bold">Style Conversion</button>
+        <button onclick="location.href='sentiment_analysis.html'" class="cormorant-garamond-bold">Sentiment Analysis</button>
+        <button onclick="location.href='doc_corrector.html'" class="cormorant-garamond-bold">Doc Corrector</button>
+    </div>
+    <div class="feature-body">
+        <h3 class="noto-sans-feature-head">Style Conversion</h3>
+        <p class="nunito-feature-body">This feature enables you to transform your text into various styles tailored to different contexts. Choose Conversational for casual and friendly interactions, Structural for formal and organized communication, Intellectual for academic and scholarly purposes, or Professional for workplace exchanges with managers or colleagues.</p>
+                 
+            <div class="input-container">
+            <textarea id="input-text" placeholder="Make your text amazing here!"></textarea>
+        <div class="icon-container">
+        <i class="fa fa-trash clear-icon" onclick="clearInput()"></i>
+        <span id="delete-label" class="icon-label">Delete</span>
+        </div>
+        </div> 
+           
+            <select id="style-select" class="form-select">
+                <option value="Conversational">Conversational</option>
+                <option value="Structural">Structural</option>
+                <option value="Intellectual">Intellectual</option>
+                <option value="Professional">Professional</option>
+            </select>
+            
+        <div class="button-container">    
+        <button onclick="correctAndConvertStyle()">Convert Style</button>
+        </div>
+        
+        <div class="textarea-container">
+            <textarea id="result" placeholder="Your corrected text will appear here!" readonly></textarea>
+        <div class="icon-container">
+        <span id="copy-label" class="icon-label">Copy</span>
+        <i class="fa fa-copy copy-icon" onclick="copyResult()"></i>
+        </div>
+        </div>
+
+    <script src="script.js"></script> 
+
+<footer>
+        <p>&copy; 2024 Correctority. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

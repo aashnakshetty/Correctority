@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Correctority: Your Guardian for Correctness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mammoth/1.4.2/mammoth.browser.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pizzip/3.1.1/pizzip.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docxtemplater/3.25.4/docxtemplater.js"></script>
+    <div class="banner">
+        <div class="logo">
+             <a href="C:/Users/Sowmya Shetty/Desktop/My Project/ui/home.html">
+                <img src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/correctority_logo.png" alt="Correctority Logo" class="logo-img" style="cursor: pointer;">
+            </a>
+        </div>
+        <div class="inter-bold" onclick="showFeature('home')" style="cursor: pointer;">
+            Correctority.
+        </div>
+    <nav>
+        <ul class="nav-items">
+            <li>
+                <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size:28px;color: #1e7b76;"></i>
+                </a>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" placeholder="Search...">
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="profile-icon" id="profile-icon">
+                    <i class="fa-solid fa-circle-user" style="font-size:28px;color:#1e7b76;"></i>
+                </a>
+                <ul class="dropdown-content" id="profile-dropdown-content">
+                    <li><a href="#login">Login</a></li>
+                    <li><a href="#signup">Sign Up</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="menu-icon" id="menu-icon">
+                    <i class="fa-solid fa-bars" style="font-size:28px;color: #1e7b76;"></i>
+                </a>
+                <ul class="dropdown-content" id="menu-dropdown-content">
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="#about">About Us</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    </div>
+    <div class="light-banner">
+        <button onclick="location.href='grammar_correction.html'" class="cormorant-garamond-bold">Grammar Correction</button>
+        <button onclick="location.href='detailed_error_explanations.html'" class="cormorant-garamond-bold">Detailed Error Explanations</button>
+        <button onclick="location.href='style_conversion.html'" class="cormorant-garamond-bold">Style Conversion</button>
+        <button onclick="location.href='sentiment_analysis.html'" class="cormorant-garamond-bold">Sentiment Analysis</button>
+        <button onclick="location.href='doc_corrector.html'" class="cormorant-garamond-bold">Doc Corrector</button>
+    </div>
+    <div class="feature-body">
+        <h3 class="noto-sans-feature-head">Doc Corrector</h3>
+        <p class="nunito-feature-body">This feature effortlessly lets you upload your Word documents and performs magical grammar corrections. With just a click, receive a polished document ready for download!</p>
+        
+
+<div class="file-upload-container">
+    <div class="file-upload-background">
+        <input type="file" id="word-upload" accept=".docx" onchange="showFileName()" />
+        <label for="word-upload">Choose File</label>
+    </div>
+    <p id="file-name-display" style="text-align: center; margin-top: 10px; color: #555;"></p>
+    <button onclick="processWordFile()">Submit File</button>
+</div>
+      
+    <script src="script.js"></script> 
+
+<footer>
+        <p>&copy; 2024 Correctority. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

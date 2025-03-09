@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">	
+    <title>Correctority: Your Guardian for Correctness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="banner">
+        <div class="logo">
+             <a href="C:/Users/Sowmya Shetty/Desktop/My Project/ui/home.html">
+                <img src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/correctority_logo.png" alt="Correctority Logo" class="logo-img" style="cursor: pointer;">
+            </a>
+        </div>
+        <div class="inter-bold" onclick="showFeature('home')" style="cursor: pointer;">
+            Correctority.
+        </div>
+    <nav>
+        <ul class="nav-items">
+            <li>
+                <a href="javascript:void(0);" id="search-icon" class="search-icon">
+                    <i class="fa-solid fa-magnifying-glass" style="font-size:28px;color: #1e7b76;"></i>
+                </a>
+                <div class="search-bar" id="search-bar">
+                    <input type="text" id="search-input" placeholder="Search..." onkeyup="showSuggestions(this.value)">
+                    <div id="suggestions" role="listbox" aria-live="polite"></div>
+                </div>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="profile-icon" id="profile-icon">
+                    <i class="fa-solid fa-circle-user" style="font-size:28px;color:#1e7b76;"></i>
+                </a>
+                <ul class="dropdown-content" id="profile-dropdown-content">
+                    <li><a href="#" id="login-btn">Login</a></li>
+                    <li><a href="#" id="signup-btn">Sign Up</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" class="menu-icon" id="menu-icon">
+                    <i class="fa-solid fa-bars" style="font-size:28px;color: #1e7b76;"></i>
+                </a>
+                <ul class="dropdown-content" id="menu-dropdown-content">
+                    <li><a href="#faqs">FAQs</a></li>
+                    <li><a href="C:/Users/Sowmya Shetty/Desktop/My Project/ui/about.html">About Us</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    </div>
+    <div class="light-banner">
+        <button onclick="location.href='grammar_correction.html'" class="cormorant-garamond-bold">Grammar Correction</button>
+        <button onclick="location.href='detailed_error_explanations.html'" class="cormorant-garamond-bold">Detailed Error Explanations</button>
+        <button onclick="location.href='style_conversion.html'" class="cormorant-garamond-bold">Style Conversion</button>
+        <button onclick="location.href='sentiment_analysis.html'" class="cormorant-garamond-bold">Sentiment Analysis</button>
+        <button onclick="location.href='doc_corrector.html'" class="cormorant-garamond-bold">Doc Corrector</button>
+    </div>
+    <div class="main-body">
+        <h1 class="inter-body">Welcome to <br> Correctority!</h1>
+        <p class="inter-body">A Magical World of Words</p>
+    </div>
+  
+     <button class="get-started-btn" onclick="showDropdown()">Get Started!</button> 
+    </div>
+    <div class="features-section">
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2>Work smarter and not harder, and shine like a pro with the ease to use grammar corrector feature.</h2>
+            </div>
+            <div class="feature-image">
+            <video controls width="650">
+                <source src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/video/grammar_correction_sentence.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2>Need in-depth error guidance and clarity on where you went wrong? We got that sorted out for you.</h2>
+            </div>
+            <div class="feature-image">
+            <video controls width="650">
+                <source src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/video/detailed_error_explanations.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2>Suit the style according to your needs, requirements and even specific industries by using this helpful feature.</h2>
+            </div>
+            <div class="feature-image">
+            <video controls width="650">
+                <source src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/video/style_conversion.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2>Understand the tone of your message sent or received, based on the positive and negative score.</h2>
+            </div>
+            <div class="feature-image">
+            <video controls width="650">
+                <source src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/video/sentiment_analysis.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+         </div>
+        <div class="feature-item">
+            <div class="feature-text">
+                <h2>Solve all your grammar errors by uploading large files, with the magic click of just a single feature. </h2>
+            </div>
+            <div class="feature-image">
+            <video controls width="650">
+                <source src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/video/doc_corrector.webm" type="video/webm">
+                Your browser does not support the video tag.
+            </video>
+            </div>
+        </div>
+    </div>
+
+    <div id="faqs" class="faq-section">
+    <h5>Frequently Asked Questions</h5>
+    <div class="faq-item">
+        <h4>Q. What is Correctority?</h4>
+        <p class="faq-para"> -> Correctority is a tool designed to help you enhance your writing by correcting grammar, style, and sentiment analysis.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Q. How does the Grammar Correction feature work?</h4>
+        <p class="faq-para"> -> The Grammar Correction feature uses advanced algorithms to identify and correct grammatical errors in your text.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Q. Can I upload large files?</h4>
+        <p class="faq-para"> -> Yes, you can upload large files using the Multi Corrector feature, which processes and corrects the grammar of your document.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Q. Is my data safe with Correctority?</h4>
+        <p class="faq-para">-> Yes, we take data privacy seriously and ensure that your documents and information are secure and not shared with third parties.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Q. Do I need to create an account to use Correctority?</h4>
+        <p class="faq-para">-> No, you can use Correctority without creating an account. However, signing up allows you to access more features and save your progress.</p>
+    </div>
+    <div class="faq-item">
+        <h4>Q. Is Correctority free to use?</h4>
+        <p class="faq-para">-> Correctority offers a free version with basic features. For more advanced features, you can subscribe to our premium plan.</p>
+    </div>
+</div>
+
+
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('loginModal')">&times;</span>
+            <img src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/correctority_logo.png" alt="Logo" class="modal-logo">
+            <h3>Login</h3>
+            <form>
+                <label for="login-email">Email:</label>
+                <input type="email" id="login-email" name="login-email" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" name="login-password" required>
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sign Up Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <img src="C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/correctority_logo.png" alt="Logo" class="modal-logo">
+            <h3>Sign Up</h3>
+            <form>
+                <label for="signup-email">Email:</label>
+                <input type="email" id="signup-email" name="signup-email" required>
+                <label for="signup-password">Password:</label>
+                <input type="password" id="signup-password" name="signup-password" required>
+                <label for="signup-confirm-password">Confirm Password:</label>
+                <input type="password" id="signup-confirm-password" name="signup-confirm-password" required>
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+<footer>
+        <p>&copy; 2024 Correctority. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

@@ -34,7 +34,11 @@ Analyzes the tone of your text, which is especially helpful for reviews or feedb
 Finds and corrects errors in entire documents and allows downloading of the corrected version.
 
 **3. Technologies Used**
+
 Frontend: HTML, CSS, JavaScript
-Backend: Flask (or specify your framework if any)
+
+Backend: Python, Streamlit
+
 APIs: LanguageTool API, Mammoth.js for document processing
+
 Deployment: GitHub Pages

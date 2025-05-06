@@ -18,6 +18,7 @@ Provides in-depth explanations on your grammar errors, from spellings, sentences
 
 -> **3. Style Conversion**
 Suggests ways to improve the structure, tone, and professionalism of the text by providing options from:
+
 i. Structural
 
 ii. Conversational

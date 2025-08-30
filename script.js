@@ -13,11 +13,11 @@ function showDropdown() {
 
 //Search feature
 const features = {
-    "Grammar Correction": "C:/Users/Sowmya Shetty/Desktop/My Project/ui/grammar_correction.html",
-    "Detailed Error Explanations": "C:/Users/Sowmya Shetty/Desktop/My Project/ui/grammar_correction.html/detailed_error_explanations.html",
-    "Style Conversion": "C:/Users/Sowmya Shetty/Desktop/My Project/ui/grammar_correction.html/style_conversion.html",
-    "Sentiment Analysis": "C:/Users/Sowmya Shetty/Desktop/My Project/ui/grammar_correction.html/sentiment_analysis.html",
-    "Doc Corrector": "C:/Users/Sowmya Shetty/Desktop/My Project/ui/grammar_correction.html/doc_corrector.html"
+    "Grammar Correction": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/grammar_correction.html",
+    "Detailed Error Explanations": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/detailed_error_explanations.html",
+    "Style Conversion": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/style_conversion.html",
+    "Sentiment Analysis": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/sentiment_analysis.html",
+    "Doc Corrector": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/doc_corrector.html"
 };
 
 function showSuggestions(value) {
@@ -395,7 +395,8 @@ function convertToIntellectual(text) {
                .replace(/\bevery day\b/gi, "daily")
                .replace(/\bgoes to\b/gi, "frequents")
                .replace(/\bsolve\b/gi, "address")
-               .replace(/\bproblem\b/gi, "issue");
+               .replace(/\bproblem\b/gi, "issue")
+               .replace(/\bnice\b/gi, "favorable");
 }
 
 function convertToProfessional(text) {
@@ -412,7 +413,8 @@ function convertToProfessional(text) {
                .replace(/\bgoes to\b/gi, "attends")
                .replace(/\bgo\b/gi, "attend")
                .replace(/\ba lot of\b/gi, "a significant amount of")
-               .replace(/\btry\b/gi, "attempt");
+               .replace(/\btry\b/gi, "attempt")
+               .replace(/\bnice\b/gi, "great");
 }
 
 function correctAndConvertStyle() {
@@ -451,8 +453,8 @@ function analyzeSentiment() {
 
         // Analyze sentiment using compromise
         let sentimentScore = 0;
-        const positiveWords = ["good", "great", "excellent", "positive", "happy", "joy", "love", "thrilled", "like", "fantastic", "enjoyable", "amazing", "liked", "like", "really good", "better", "awesome", "brilliant"];
-        const negativeWords = ["bad", "terrible", "awful", "negative", "sad", "anger", "hate", "disappointed", "dislike", "stupid", "yuck", "disgusting", "worst", "poor", "gross"];
+        const positiveWords = ["good", "friendly", "great", "excellent", "positive", "happy", "joy", "love", "thrilled", "like", "fantastic", "enjoyable", "amazing", "liked", "like", "really good", "better", "awesome", "brilliant", "nice", "ambience", "warm", "exceptional", "polite"];
+        const negativeWords = ["bad", "terrible", "awful", "negative", "sad", "anger", "hate", "disappointed", "disappointing", "dislike", "stupid", "yuck", "disgusting", "worst", "poor", "gross", "unusable"];
 
         doc.sentences().forEach(sentence => {
             positiveWords.forEach(word => {
@@ -519,7 +521,7 @@ function processWordFile() {
 
                     // Generate corrected Word file
                     const correctedBlob = generateWordFile(correctedText);
-                    downloadFile(correctedBlob, "Corrected_Document.docx");
+                    downloadFile(correctedBlob, "Corrected_Document.doc");
                 });
             })
             .catch(function (err) {
@@ -544,19 +546,24 @@ function correctGrammarWithAPI(inputText, callback) {
         .then((response) => response.json())
         .then((data) => {
             let correctedText = inputText;
-            const matches = data.matches;
+            let offsetShift = 0;
 
             // Process corrections
-            matches.forEach((match) => {
+            data.matches.forEach((match) => {
                 const replacement = match.replacements[0]?.value || "";
                 if (replacement) {
-                    correctedText = correctedText.replace(
-                        match.context.text.substring(match.offset, match.offset + match.length),
-                        replacement
-                    );
+                    const start = match.offset + offsetShift;
+                    const end = start + match.length;
+                            
+                    correctedText = 
+                           correctedText.slice(0, start) +
+                           replacement +
+                           correctedText.slice(end);
+                                 
+                    offsetShift += replacement.length - match.length;
                 }
             });
-
+            
             callback(correctedText);
         })
         .catch((err) => {

@@ -7,7 +7,7 @@ body, html {
 }
 
 .main-body { 
-    background-image: url("C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/home_page.png");
+    background-image: url("C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/images/home_page.png");
     background-size: 2000px 900px; 
     background-position: center; 
     background-repeat:no-repeat;
@@ -132,8 +132,6 @@ body {
         transform: translateY(0);  
         opacity: 1; } } 
 
-.light-banner button { 
-}
 
 .main-body {
     background-color: #f7f7f7;
@@ -154,7 +152,6 @@ h1 {
 p {
     font-size: 25px;
     color: white;
-    font-top: 10px;
     text-align: center;
     text-indent: 0px;
     margin-top: 30px;
@@ -313,18 +310,20 @@ h2 {
 
 /* Search icon and bar */
 .search-bar {
-    display: inline-block; /* Hidden by default */
     position: absolute;
-    top: -3px; /* Adjust to position correctly */
-    right: 48px; /* Adjust to align under the icon */
+    top: 0.01px; /* Adjust to position correctly */
+    right: 43px; /* Adjust to align under the icon */
     padding: 5px;
     background: #fff; 
     border: 1px solid #ccc;
     border-radius: 4px;
     z-index: 10;
+    width:250px;
 }
 
 .search-bar input {
+    width:100%;
+    box-sizing: border-box;
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -339,14 +338,24 @@ h2 {
     border: 1px solid #ccc;
     border-top: none;
     background-color: #fff;
-    position: absolute;
-    width: 200px; /* Adjust width if needed */
-    z-index: 1000;
+    position: relative; 
+    width: 100%; /* Adjust width if needed */
+    padding: 5px 0;
+    margin-top: 5px; 
+    overflow-y: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
 .suggestion-item {
-    padding: 10px;
+    padding: 12px 20px;
     cursor: pointer;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.suggestion-item:last-child {
+    border-bottom: none;
 }
 
 .suggestion-item:hover {
@@ -356,7 +365,7 @@ h2 {
 /* Features css */
 
 .feature-body { 
-    background-image: url("C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/feature_page.jpeg");
+    background-image: url("C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/images/feature_page.jpeg");
     background-size: cover; 
     background-repeat:no-repeat;
     background-attachment: fixed;
@@ -859,11 +868,11 @@ button:hover {
 }
 
 .about-body {
-    background-image: url("C:/Users/Sowmya Shetty/Desktop/My Project/ui/images/home_page.png");
+    background-image: url("C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/images/home_page.png");
     background-size: cover; /* Ensures the image covers the entire section */
     background-position: center;
     background-repeat: no-repeat;
-    min-height: calc(100vh - 100px) /* Adjusts height dynamically minus footer height */
+    min-height: calc(100vh - 100px); /* Adjusts height dynamically minus footer height */
     transition: opacity 1s ease-out; /* Smooth transition for opacity */
     display: flex;
     flex-direction: column; /* Stacks content vertically if needed */

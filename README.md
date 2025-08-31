@@ -53,6 +53,9 @@ Finds and corrects errors grammar issues in entire documents and allows download
 - Logo is clickable leading back to home page.  
 - Favicon logo is self made - A 'C' and Tick mark to show verified correctness while the period stands for full stop.
 - Get started button has a shining effect.
+- The home page image fades as you scroll down.
+- I chose the turquoise pallette because it is my favorite color.
+- There is a delete button (deletes all at once) - cop button (copies all at once)
 <br>
 
 ## **5. App Structure**

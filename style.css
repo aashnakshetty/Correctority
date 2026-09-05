@@ -7,10 +7,11 @@ body, html {
 }
 
 .main-body { 
-    background-image: url("C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/images/home_page.png");
+    /* FIXED: Relative path for background image */
+    background-image: url("ui/images/home_page.png");
     background-size: 2000px 900px; 
     background-position: center; 
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     height: 60vh;
     transition: opacity 1s ease-out; /* Smooth transition for opacity */
 }
@@ -23,10 +24,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f7f7f7;
     margin: 0;
-    padding: 100;
+    padding: 100px;
 }
 
-/*Banner option */
+/* Banner option */
 
 .banner {
     background-color: white;
@@ -43,7 +44,7 @@ body {
     padding: 0; /* Removes any padding around the banner */
 }
 
-/*Home Button option */
+/* Home Button option */
 .get-started-btn { 
     font-family: "Inter", serif; 
     font-weight: bold;
@@ -97,7 +98,7 @@ body {
     background-color: #01717d; 
     padding: 6px; 
     text-align: center;
-    overflow:hidden; 
+    overflow: hidden; 
     display: flex;  
     position: sticky;   
     top: 60px;
@@ -106,14 +107,14 @@ body {
 .light-banner button {
     background: none; 
     cursor: pointer;
-    flex:1; 
+    flex: 1; 
     white-space: normal;  
     transition: background-color 0.3s, color 0.3s, transform 0.3s;   
     text-align: center; 
     font-family: 'Inter', serif; 
     font-weight: 600;
     font-size: 16px;
-    margin-top:0px;
+    margin-top: 0px;
     position: sticky;
 } 
 
@@ -130,8 +131,9 @@ body {
     } 
     to { 
         transform: translateY(0);  
-        opacity: 1; } } 
-
+        opacity: 1; 
+    } 
+} 
 
 .main-body {
     background-color: #f7f7f7;
@@ -149,15 +151,16 @@ h1 {
     margin-right: 70px;
     margin-bottom: 10px;
 }
+
 p {
     font-size: 25px;
     color: white;
     text-align: center;
     text-indent: 0px;
     margin-top: 30px;
-    padding:0px;
-    font-family:"Inter", bold;
-    font-weight:bold;
+    padding: 0px;
+    font-family: "Inter", bold;
+    font-weight: bold;
 }
 
 h2 {
@@ -169,60 +172,60 @@ h2 {
 }
 
 .inter-bold {
-  font-family: "Inter", serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
-  font-size:30px;
-  text-align:left;
-  margin-top: -50px;
-  margin-right: 9000px;
-  margin-left:90px;
-  margin-bottom:10px;
+    font-family: "Inter", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 30px;
+    text-align: left;
+    margin-top: -50px;
+    margin-right: 9000px;
+    margin-left: 90px;
+    margin-bottom: 10px;
 }
 
-/*Features option*/
+/* Features option */
 
 .features-section { 
-     padding: 20px; 
-     background-color:#01717d;
+    padding: 20px; 
+    background-color: #01717d;
 } 
 
 .feature-item { 
-     display: flex;   
-     padding: 20px 0; 
-     align-items: center;
+    display: flex;   
+    padding: 20px 0; 
+    align-items: center;
 } 
 
 .feature-text { 
-     flex: 1; 
-     padding-right: 20px;
+    flex: 1; 
+    padding-right: 20px;
 } 
 
 .feature-image { 
-     flex: 1;  
-     display: flex; 
-     justify-content: center; 
-     align-items: center; 
-     text-align: center; 
-     padding: 20px; 
-     background-color: #01717d;
+    flex: 1;  
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
+    padding: 20px; 
+    background-color: #01717d;
 } 
 
 .feature-image p { 
-     font-size: 16px; 
-     background-color: #777; 
+    font-size: 16px; 
+    background-color: #777; 
 }
 
 /* Logo CSS */
 .logo-img { 
-  width: 60px;
-  height: 60px; 
-  display: inline-block; 
-  vertical-align: middle;
-  margin-top: 10px;
-  margin-right: 9000px;
-  margin-left:20px;
+    width: 60px;
+    height: 60px; 
+    display: inline-block; 
+    vertical-align: middle;
+    margin-top: 10px;
+    margin-right: 9000px;
+    margin-left: 20px;
 }
 
 .logo-container {
@@ -233,8 +236,8 @@ h2 {
 
 .nav-items {
     display: flex;
-    padding:0;
-    list-style:none;
+    padding: 0;
+    list-style: none;
     justify-content: flex-end;
     margin: 0;
     margin-top: -30px;
@@ -244,7 +247,7 @@ h2 {
 .nav-items li {
     list-style: none;
     margin-left: 25px;
-    font-weight:bold;
+    font-weight: bold;
     position: relative;
 }
 
@@ -294,7 +297,7 @@ h2 {
     color: #365b6d;
     padding: 12px 16px;
     text-decoration: none;
-    text-align:center;
+    text-align: center;
     display: block;
     transition: background-color 0.3s ease;
     margin: 0;
@@ -311,18 +314,18 @@ h2 {
 /* Search icon and bar */
 .search-bar {
     position: absolute;
-    top: 0.01px; /* Adjust to position correctly */
-    right: 43px; /* Adjust to align under the icon */
+    top: 0.01px; 
+    right: 43px; 
     padding: 5px;
     background: #fff; 
     border: 1px solid #ccc;
     border-radius: 4px;
     z-index: 10;
-    width:250px;
+    width: 250px;
 }
 
 .search-bar input {
-    width:100%;
+    width: 100%;
     box-sizing: border-box;
     padding: 5px 10px;
     border: 1px solid #ccc;
@@ -330,7 +333,7 @@ h2 {
     font-family: "Inter", italic;
 }
 
-.search-show{
+.search-show {
     display: block !important;
 }
 
@@ -339,7 +342,7 @@ h2 {
     border-top: none;
     background-color: #fff;
     position: relative; 
-    width: 100%; /* Adjust width if needed */
+    width: 100%; 
     padding: 5px 0;
     margin-top: 5px; 
     overflow-y: auto;
@@ -365,20 +368,21 @@ h2 {
 /* Features css */
 
 .feature-body { 
-    background-image: url("C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/images/feature_page.jpeg");
+    /* FIXED: Relative path for background image */
+    background-image: url("ui/images/feature_page.jpeg");
     background-size: cover; 
-    background-repeat:no-repeat;
+    background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
-    width:100%;   
-    display:flex;
+    width: 100%;   
+    display: flex;
     flex-direction: column;
-    margin:0;
-    padding:20px;
-    box-sizing:border-box;
+    margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
-h3{
+h3 {
     font-size: 55px;
     color: #365b6d;
     text-align: center;
@@ -386,10 +390,10 @@ h3{
     margin-bottom: 100px;
     margin-right: 100px;
     margin-left: 100px;
-    font-family:'Inter-bold', serif; 
+    font-family: 'Inter-bold', serif; 
 }
 
-p1{
+p1 {
     font-size: 25px;
     color: #365b6d;
     text-align: center;
@@ -400,19 +404,18 @@ p1{
 }
 
 .noto-sans-feature-head {
-  font-family: "Noto Sans", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: 200;
-  font-variation-settings:
-    "wdth" 100;
+    font-family: "Noto Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
 }
 
 .nunito-feature-body {
-  font-family: "Nunito", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
+    font-family: "Nunito", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
 }
 
 /* Feature Page text */
@@ -431,9 +434,9 @@ textarea {
 }
 
 .textarea-container {
-    position:relative;
+    position: relative;
     margin: 20px auto;
-    width:83%;
+    width: 83%;
 }
 
 button {
@@ -448,7 +451,7 @@ button {
     margin-top: 10px;
     box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    display:inline-block;
+    display: inline-block;
 }
 
 button:hover {
@@ -457,13 +460,13 @@ button:hover {
 
 .button-container {
     margin: 20px auto;
-    width:83%;
+    width: 83%;
 }
 
 #result {
     width: 103%; 
     height: 250px; 
-    padding: 10px 50px 10px 10px;; 
+    padding: 10px 50px 10px 10px; 
     font-size: 15px; 
     background-color: #f9f9f9; 
     border-radius: 15px; 
@@ -516,7 +519,7 @@ button:hover {
     position: absolute;
     bottom: 1070px;
     top: -240px;
-    right:-1095px;
+    right: -1095px;
     cursor: pointer;
     color: #999;
     font-size: 25px;
@@ -537,9 +540,9 @@ button:hover {
     margin-bottom: -20px; 
 }
 
-/*Detailed - Error Output Box*/
+/* Detailed - Error Output Box */
 .output-box {
-    width:100%;
+    width: 100%;
     max-width: 1110px;
     min-height: 150px;
     height: auto;
@@ -569,10 +572,10 @@ button:hover {
     background-color: #fff;
     font-size: 15px;
     font-family: "Nunito", serif;
-    position:relative;
-    display:flex;
-    justify-content:space-between;  
-    align-items:center;
+    position: relative;
+    display: flex;
+    justify-content: space-between;  
+    align-items: center;
 }
 
 /* Updated class for the copy icon */
@@ -583,7 +586,6 @@ button:hover {
     position: static; 
     bottom: 5px; 
     left: 1060px; 
-    
 }
 
 .copysicon:hover {
@@ -625,33 +627,9 @@ button:hover {
     border: 1px solid #ddd;
     border-radius: 10px;
     font-size: 1em;
-    font-family:"Nunito", serif;
-    color: #365b6d; 
-    font-weight:700;
-}
-
-button {
     font-family: "Nunito", serif;
-    font-size: 16.7px;
+    color: #365b6d; 
     font-weight: 700;
-    color: white;
-    background-color: #365b6d;
-    border: none;
-    padding: 15px 20px;
-    cursor: pointer;
-    margin-top: 10px;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    display:inline-block;
-}
-
-button:hover {
-    background-color: #2d4f5d;
-}
-
-.button-container {
-    margin: 20px auto;
-    width:83%;
 }
 
 /* Doc Corrector */
@@ -737,26 +715,26 @@ button:hover {
     font-size: 46.2px;
     color: #365b6d;
     text-align: center;
-    font-family:"Nunito", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .faq-item {
     font-size: 19.2px;
     color: #365b6d;
     text-align: left;
-    font-family:"Inter", serif;
+    font-family: "Inter", serif;
     margin-left: 30px;
-    margin-bottom:20px;
-    padding-bottom:30px;
+    margin-bottom: 20px;
+    padding-bottom: 30px;
 }
 
-.faq-para{
+.faq-para {
     font-size: 16.2px;
     color: #365b6d;
     text-align: left;
-    font-family:"Inter", serif;
+    font-family: "Inter", serif;
     margin: 10px 0;
-    font-weight:normal;
+    font-weight: normal;
 }
 
 /* Modal */
@@ -782,7 +760,7 @@ button:hover {
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: left;
-    position: relative; /* Ensure elements are positioned relative to modal content */
+    position: relative;
 }
 
 .close {
@@ -800,10 +778,10 @@ button:hover {
 }
 
 .modal-logo {
-    max-width: 100px; /* Reduce the size of the logo */
+    max-width: 100px;
     height: auto;
     display: block;
-    margin: 0 auto 20px auto; /* Center the logo and add spacing below */
+    margin: 0 auto 20px auto;
 }
 
 .modal form {
@@ -821,7 +799,7 @@ button:hover {
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    font-family:"Nunito", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .modal form button {
@@ -833,7 +811,7 @@ button:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-family:"Nunito", sans-serif;
+    font-family: "Nunito", sans-serif;
 }
 
 .modal form button:hover {
@@ -860,24 +838,23 @@ button:hover {
 
 .about-content h2 {
     margin-bottom: 20px;
-    font-weight: normal;
     text-align: center;
     color: #365b6d;
-    font-weight:700;
-    
+    font-weight: 700;
 }
 
 .about-body {
-    background-image: url("C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/images/home_page.png");
-    background-size: cover; /* Ensures the image covers the entire section */
+    /* FIXED: Relative path for background image */
+    background-image: url("ui/images/home_page.png");
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: calc(100vh - 100px); /* Adjusts height dynamically minus footer height */
-    transition: opacity 1s ease-out; /* Smooth transition for opacity */
+    min-height: calc(100vh - 100px);
+    transition: opacity 1s ease-out;
     display: flex;
-    flex-direction: column; /* Stacks content vertically if needed */
-    justify-content: center; /* Centers content vertically */
-    align-items: center; /* Centers content horizontally */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Video CSS */
@@ -893,13 +870,12 @@ button:hover {
 
 /* Footer CSS */
 footer {
-  text-align: center;
-  background-color: #00b3b3;
-  color: white;
-  position: relative;
-  margin: 0;
-  padding: 10px 90px;
-  height: 200px; 
-  line-height: 90px; 
-  
-}                                                                                                                                                                                                                               
+    text-align: center;
+    background-color: #00b3b3;
+    color: white;
+    position: relative;
+    margin: 0;
+    padding: 10px 90px;
+    height: 200px; 
+    line-height: 90px; 
+}

@@ -1,23 +1,23 @@
-//Get Started
+// Get Started
 function showDropdown() {
-        // Select the profile dropdown
-        const dropdown = document.getElementById('profile-dropdown-content');
-        
-        // Toggle the dropdown visibility
-        if (dropdown.style.display === 'block') {
-            dropdown.style.display = 'none';
-        } else {
-            dropdown.style.display = 'block';
-        }
+    // Select the profile dropdown
+    const dropdown = document.getElementById('profile-dropdown-content');
+    
+    // Toggle the dropdown visibility
+    if (dropdown.style.display === 'block') {
+        dropdown.style.display = 'none';
+    } else {
+        dropdown.style.display = 'block';
     }
+}
 
-//Search feature
+// FIXED: Relative paths for search feature routing
 const features = {
-    "Grammar Correction": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/grammar_correction.html",
-    "Detailed Error Explanations": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/detailed_error_explanations.html",
-    "Style Conversion": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/style_conversion.html",
-    "Sentiment Analysis": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/sentiment_analysis.html",
-    "Doc Corrector": "C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/doc_corrector.html"
+    "Grammar Correction": "grammar_correction.html",
+    "Detailed Error Explanations": "detailed_error_explanations.html",
+    "Style Conversion": "style_conversion.html",
+    "Sentiment Analysis": "sentiment_analysis.html",
+    "Doc Corrector": "doc_corrector.html"
 };
 
 function showSuggestions(value) {
@@ -41,8 +41,9 @@ function showSuggestions(value) {
 // Event listener to close suggestions when clicking outside
 document.addEventListener('click', function(event) {
     const searchBar = document.getElementById('search-bar');
-    if (!searchBar.contains(event.target)) {
-        document.getElementById('suggestions').innerHTML = '';
+    if (searchBar && !searchBar.contains(event.target)) {
+        const suggestions = document.getElementById('suggestions');
+        if (suggestions) suggestions.innerHTML = '';
     }
 });
 
@@ -52,23 +53,29 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginBtn = document.getElementById('login-btn');
     const signupBtn = document.getElementById('signup-btn');
 
-    loginBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        openModal('loginModal');
-    });
+    if (loginBtn) {
+        loginBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            openModal('loginModal');
+        });
+    }
 
-    signupBtn.addEventListener('click', function(event) {
-        event.preventDefault();
-        openModal('signupModal');
-    });
+    if (signupBtn) {
+        signupBtn.addEventListener('click', function(event) {
+            event.preventDefault();
+            openModal('signupModal');
+        });
+    }
 });
 
 function openModal(modalId) {
-    document.getElementById(modalId).style.display = 'block';
+    const modal = document.getElementById(modalId);
+    if (modal) modal.style.display = 'block';
 }
 
 function closeModal(modalId) {
-    document.getElementById(modalId).style.display = 'none';
+    const modal = document.getElementById(modalId);
+    if (modal) modal.style.display = 'none';
 }
 
 // Close modals when clicking outside of the modal content
@@ -84,12 +91,16 @@ window.onclick = function(event) {
 }
 
 
-//FAQ Scroll
+// FAQ Scroll
 document.addEventListener('DOMContentLoaded', function() {
-    document.querySelector('a[href="#faqs"]').addEventListener('click', function(event) {
-        event.preventDefault();
-        document.getElementById('faqs').scrollIntoView({ behavior: 'smooth' });
-    });
+    const faqLink = document.querySelector('a[href="#faqs"]');
+    if (faqLink) {
+        faqLink.addEventListener('click', function(event) {
+            event.preventDefault();
+            const faqSection = document.getElementById('faqs');
+            if (faqSection) faqSection.scrollIntoView({ behavior: 'smooth' });
+        });
+    }
 });
 
 // Menu Dropdowns
@@ -104,25 +115,31 @@ document.addEventListener("DOMContentLoaded", function () {
     const searchBar = document.getElementById("search-bar");
 
     // Toggle visibility for menu dropdown
-    menuIcon.addEventListener("click", function (event) {
-        event.stopPropagation(); // Prevent click from bubbling to the window
-        closeAllDropdowns();
-        menuDropdownContent.classList.toggle("dropdown-show");
-    });
+    if (menuIcon && menuDropdownContent) {
+        menuIcon.addEventListener("click", function (event) {
+            event.stopPropagation();
+            closeAllDropdowns();
+            menuDropdownContent.classList.toggle("dropdown-show");
+        });
+    }
 
     // Toggle visibility for profile dropdown
-    profileIcon.addEventListener("click", function (event) {
-        event.stopPropagation();
-        closeAllDropdowns();
-        profileDropdownContent.classList.toggle("dropdown-show");
-    });
+    if (profileIcon && profileDropdownContent) {
+        profileIcon.addEventListener("click", function (event) {
+            event.stopPropagation();
+            closeAllDropdowns();
+            profileDropdownContent.classList.toggle("dropdown-show");
+        });
+    }
 
     // Toggle visibility for search bar
-    searchIcon.addEventListener("click", function (event) {
-        event.stopPropagation();
-        closeAllDropdowns();
-        searchBar.classList.toggle("search-show");
-    });
+    if (searchIcon && searchBar) {
+        searchIcon.addEventListener("click", function (event) {
+            event.stopPropagation();
+            closeAllDropdowns();
+            searchBar.classList.toggle("search-show");
+        });
+    }
 
     // Close all dropdowns when clicking outside
     window.addEventListener("click", function () {
@@ -130,76 +147,97 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function closeAllDropdowns() {
-        menuDropdownContent.classList.remove("dropdown-show");
-        profileDropdownContent.classList.remove("dropdown-show");
-        searchBar.classList.remove("search-show");
+        if (menuDropdownContent) menuDropdownContent.classList.remove("dropdown-show");
+        if (profileDropdownContent) profileDropdownContent.classList.remove("dropdown-show");
+        if (searchBar) searchBar.classList.remove("search-show");
     }
 });
 
-//The Disappearing Effect on Scroll
+// The Disappearing Effect on Scroll
 window.addEventListener('scroll', function() {
     var mainBody = document.querySelector('.main-body');
     var scrollPosition = window.scrollY;
 
-    // Adjust the condition and opacity as needed
-    if (scrollPosition > 100) {
-        mainBody.classList.add('fade-out');
-    } else {
-        mainBody.classList.remove('fade-out');
+    if (mainBody) {
+        if (scrollPosition > 100) {
+            mainBody.classList.add('fade-out');
+        } else {
+            mainBody.classList.remove('fade-out');
+        }
     }
 });
 
 document.addEventListener('DOMContentLoaded', function() {
     const button = document.querySelector('.get-started-btn');
 
-    button.addEventListener('mousemove', function(e) {
-        const sparkle = document.createElement('div');
-        sparkle.classList.add('sparkle');
+    if (button) {
+        button.addEventListener('mousemove', function(e) {
+            const sparkle = document.createElement('div');
+            sparkle.classList.add('sparkle');
 
-        const x = e.clientX - button.getBoundingClientRect().left;
-        const y = e.clientY - button.getBoundingClientRect().top;
+            const x = e.clientX - button.getBoundingClientRect().left;
+            const y = e.clientY - button.getBoundingClientRect().top;
 
-        sparkle.style.left = `${x}px`;
-        sparkle.style.top = `${y}px`;
+            sparkle.style.left = `${x}px`;
+            sparkle.style.top = `${y}px`;
 
-        button.appendChild(sparkle);
+            button.appendChild(sparkle);
 
-        setTimeout(() => {
-            sparkle.remove();
-        }, 1000); // Match with the animation duration
-    });
+            setTimeout(() => {
+                sparkle.remove();
+            }, 1000);
+        });
+    }
 });
 
 // Function to clear the input box and update label
 function clearInput() {
     const inputBox = document.getElementById("input-text");
-    inputBox.value = "";
+    if (inputBox) inputBox.value = "";
+    
+    const origText = document.getElementById("original-text");
+    if (origText) origText.textContent = "Your original text will appear here.";
+    
+    const corrText = document.getElementById("corrected-text");
+    if (corrText) corrText.textContent = "Your corrected text will appear here.";
+    
+    const suggText = document.getElementById("suggestions");
+    if (suggText) suggText.textContent = "Suggestions will appear here.";
+    
+    const explText = document.getElementById("explanations");
+    if (explText) explText.textContent = "Explanations will appear here.";
+
     const deleteLabel = document.getElementById("delete-label");
-    deleteLabel.textContent = "Deleted!"; // Update label text
-    setTimeout(() => {
-        deleteLabel.textContent = "Delete"; // Reset label text after 2 seconds
-    }, 2000);
+    if (deleteLabel) {
+        deleteLabel.textContent = "Deleted!";
+        setTimeout(() => {
+            deleteLabel.textContent = "Delete";
+        }, 2000);
+    }
 }
 
 function copyResult() {
     const resultBox = document.getElementById("result");
-    resultBox.select(); // Select the text
-    document.execCommand("copy"); // Copy the text to clipboard
+    if (resultBox) {
+        resultBox.select();
+        document.execCommand("copy");
+    }
 
     const copyLabel = document.getElementById("copy-label");
-    copyLabel.textContent = "Copied"; // Update label text
-    setTimeout(() => {
-        copyLabel.textContent = "Copy"; // Reset label text after 2 seconds
-    }, 2000);
+    if (copyLabel) {
+        copyLabel.textContent = "Copied";
+        setTimeout(() => {
+            copyLabel.textContent = "Copy";
+        }, 2000);
+    }
 }
 
-// Function to copy text from the result box and update label
 function copyCorrectedText() {
     const correctedTextElement = document.getElementById('corrected-text');
-    const textToCopy = correctedTextElement.textContent || correctedTextElement.innerText; // Get plain text content
+    if (!correctedTextElement) return;
+    const textToCopy = correctedTextElement.textContent || correctedTextElement.innerText;
 
     if (!navigator.clipboard) {
-        // Fallback for unsupported browsers
         const range = document.createRange();
         range.selectNode(correctedTextElement);
         window.getSelection().removeAllRanges();
@@ -217,7 +255,6 @@ function copyCorrectedText() {
         return;
     }
 
-    // Use modern Clipboard API
     navigator.clipboard.writeText(textToCopy)
         .then(() => {
             showCopyFeedback('Copied!');
@@ -228,7 +265,6 @@ function copyCorrectedText() {
         });
 }
 
-// Helper function to show feedback
 function showCopyFeedback(message) {
     const copyIcon = document.querySelector('.copysicon');
     if (copyIcon) {
@@ -239,17 +275,16 @@ function showCopyFeedback(message) {
     }
 }
 
-// Functions for Features
 // Grammar Correction
 function initiateGrammarCheck() {
     const userInput = document.getElementById("input-text").value;
     checkGrammar(userInput, function(correctedText) {
-        document.getElementById("result").textContent = correctedText;
-    
-// For autoscrolling to result
-const resultBox = document.getElementById('result');
-    resultBox.scrollIntoView({ behavior: 'smooth' });
-});
+        const resultElement = document.getElementById("result");
+        if (resultElement) {
+            resultElement.textContent = correctedText;
+            resultElement.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
 }
 
 function checkGrammar(text, callback) {
@@ -273,7 +308,6 @@ function checkGrammar(text, callback) {
                 correctedText = correctedText.substr(0, offset) + replacement + correctedText.substr(offset + length);
             });
 
-            // Ensure callback is a function before calling it
             if (typeof callback === 'function') {
                 callback(correctedText);
             } else {
@@ -285,9 +319,6 @@ function checkGrammar(text, callback) {
         });
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-});
-
 function getExplanations() {
     const userInput = document.getElementById("input-text").value;
     const apiUrl = "https://api.languagetool.org/v2/check";
@@ -297,7 +328,6 @@ function getExplanations() {
         body: `text=${encodeURIComponent(userInput)}&language=en-US`,
     };
 
-    // Fetch and update results
     fetch(apiUrl, params)
         .then((response) => response.json())
         .then((data) => {
@@ -318,7 +348,6 @@ function getExplanations() {
             );
             const explanations = matches.map((match) => match.message);
 
-            // Update DOM
             document.getElementById("original-text").textContent = userInput;
             document.getElementById("corrected-text").textContent = correctedText;
             document.getElementById("suggestions").textContent = suggestions.join(", ");
@@ -327,16 +356,7 @@ function getExplanations() {
         .catch((error) => console.error("Error:", error));
 }
 
-function clearInput() {
-    document.getElementById("input-text").value = "";
-    document.getElementById("original-text").textContent = "Your original text will appear here.";
-    document.getElementById("corrected-text").textContent = "Your corrected text will appear here.";
-    document.getElementById("suggestions").textContent = "Suggestions will appear here.";
-    document.getElementById("explanations").textContent = "Explanations will appear here.";
-}
-
-
-//Style Conversion
+// Style Conversion
 function convertToConversational(text) {
     return text.replace(/\bI do not\b/gi, "I don't")
                .replace(/\bam not\b/gi, "ain't")
@@ -447,11 +467,9 @@ function analyzeSentiment() {
         return;
     }
 
-    // Correct the text first using the existing checkGrammar function
     checkGrammar(userInput, function(correctedText) {
         const doc = nlp(correctedText);
 
-        // Analyze sentiment using compromise
         let sentimentScore = 0;
         const positiveWords = ["good", "friendly", "great", "excellent", "positive", "happy", "joy", "love", "thrilled", "like", "fantastic", "enjoyable", "amazing", "liked", "like", "really good", "better", "awesome", "brilliant", "nice", "ambience", "warm", "exceptional", "polite"];
         const negativeWords = ["bad", "terrible", "awful", "negative", "sad", "anger", "hate", "disappointed", "disappointing", "dislike", "stupid", "yuck", "disgusting", "worst", "poor", "gross", "unusable"];
@@ -476,30 +494,29 @@ function analyzeSentiment() {
             sentimentText = "Negative";
         }
 
-        // Display the result in the "result" textarea
         const resultBox = document.getElementById("result");
-        resultBox.value = `Sentiment: ${sentimentText} (Score: ${sentimentScore})`;
+        if (resultBox) {
+            resultBox.value = `Sentiment: ${sentimentText} (Score: ${sentimentScore})`;
+        }
     });
 }
 
 // Doc Corrector
-// Show the name of the uploaded file
 function showFileName() {
     const fileInput = document.getElementById("word-upload");
     const fileNameDisplay = document.getElementById("file-name-display");
-    const file = fileInput.files[0];
+    const file = fileInput ? fileInput.files[0] : null;
 
     if (file) {
         fileNameDisplay.textContent = `Uploaded File: ${file.name}`;
-    } else {
-        fileNameDisplay.textContent = ""; // Clear if no file is uploaded
+    } else if (fileNameDisplay) {
+        fileNameDisplay.textContent = "";
     }
 }
 
-// Process the uploaded Word file
 function processWordFile() {
     const fileInput = document.getElementById("word-upload");
-    const file = fileInput.files[0];
+    const file = fileInput ? fileInput.files[0] : null;
 
     if (!file) {
         alert("Please upload a Word document.");
@@ -515,11 +532,9 @@ function processWordFile() {
                 const textContent = result.value;
                 console.log("Extracted Content:", textContent);
 
-                // Send textContent to your grammar correction API
                 correctGrammarWithAPI(textContent, function (correctedText) {
                     console.log("Corrected Content:", correctedText);
 
-                    // Generate corrected Word file
                     const correctedBlob = generateWordFile(correctedText);
                     downloadFile(correctedBlob, "Corrected_Document.doc");
                 });
@@ -533,9 +548,8 @@ function processWordFile() {
     reader.readAsArrayBuffer(file);
 }
 
-// Correct grammar using API
 function correctGrammarWithAPI(inputText, callback) {
-    const apiUrl = "https://api.languagetool.org/v2/check"; // Replace with your grammar correction API endpoint
+    const apiUrl = "https://api.languagetool.org/v2/check";
     const params = {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
@@ -548,7 +562,6 @@ function correctGrammarWithAPI(inputText, callback) {
             let correctedText = inputText;
             let offsetShift = 0;
 
-            // Process corrections
             data.matches.forEach((match) => {
                 const replacement = match.replacements[0]?.value || "";
                 if (replacement) {
@@ -572,7 +585,6 @@ function correctGrammarWithAPI(inputText, callback) {
         });
 }
 
-// Generate Word file Blob
 function generateWordFile(correctedText) {
     const content = `
         <html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word">
@@ -587,7 +599,6 @@ function generateWordFile(correctedText) {
     return blob;
 }
 
-// Trigger file download
 function downloadFile(blob, fileName) {
     const link = document.createElement("a");
     link.href = URL.createObjectURL(blob);
@@ -595,5 +606,5 @@ function downloadFile(blob, fileName) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-    URL.revokeObjectURL(link.href); // Clean up
+    URL.revokeObjectURL(link.href);
 }

@@ -8,15 +8,18 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    
+    <!-- FIXED: Relative path to favicon -->
+    <link rel="icon" href="ui/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://unpkg.com/compromise"></script>
 </head>
 <body>
     <div class="banner">
         <div class="logo">
-             <a href="C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/home.html">
-                <img src="C:/Users/Sowmya Shetty/Desktop/Projects/Correctority/ui/images/correctority_logo.png" alt="Correctority Logo" class="logo-img" style="cursor: pointer;">
+             <!-- FIXED: Relative links to index.html and logo in ui/images/ -->
+             <a href="index.html">
+                <img src="ui/images/correctority_logo.png" alt="Correctority Logo" class="logo-img" style="cursor: pointer;">
             </a>
         </div>
         <div class="inter-bold" onclick="showFeature('home')" style="cursor: pointer;">
@@ -47,7 +50,7 @@
                 </a>
                 <ul class="dropdown-content" id="menu-dropdown-content">
                     <li><a href="#faqs">FAQs</a></li>
-                    <li><a href="#about">About Us</a></li>
+                    <li><a href="about.html">About Us</a></li>
                 </ul>
             </li>
         </ul>
@@ -76,7 +79,7 @@
         <button onclick="analyzeSentiment()">Analyze Sentiment</button>
         </div>
 
-        <div class="textarea-container">         
+        <div class="textarea-container">          
         <textarea id="result" placeholder="Your sentiment result will appear here!" readonly></textarea> 
         <div class="icon-container">
         <span id="copy-label" class="icon-label">Copy</span>
